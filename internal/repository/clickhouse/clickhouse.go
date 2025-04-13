@@ -34,6 +34,7 @@ func (c *ClickhouseDB) Create(data domain.RegisterRedirectEventDTO) error {
 
 	_, err := c.conn.Exec(query, data.Original, data.Short, data.UserIP, data.Os, time.Now())
 	if err != nil {
+		fmt.Println(err)
 		return fmt.Errorf("insert redirect error: %v", err)
 	}
 

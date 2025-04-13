@@ -43,7 +43,7 @@ ConsumerLoop:
 			var messageData domain.RegisterRedirectEventDTO
 			err := json.Unmarshal(msg.Value, &messageData)
 			if err != nil {
-				// error handling
+
 			}
 
 			h.service.Create(messageData)
